@@ -7,25 +7,22 @@ Output Format:
 Element x - That is repeated */
 
 #include <stdio.h>
-
-int main()
-{
+#define max 100
+int main() {
+    int arr[max]={0};
     int n;
-    scanf("%d", &n);
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &arr[i]);
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
     }
-
-    int sum = n * (n + 1) / 2;
-    int newsum = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        newsum += arr[i];
+    for (int i=0;i<n;i++){
+        arr[a[i]]++;
     }
-
-    printf("%d", n - sum + newsum);
+    for ( int i=0;i<max;i++){
+        if(arr[i]>1){
+            printf("%d",i);
+        }
+    }
+    return 0;
 }
